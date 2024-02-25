@@ -4,19 +4,193 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>Belajar tialwind css</title>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+      };
+    </script>
     <style type="text/tailwindcss">
-      * {
-        border: 1px solid red;
+      #toggle:checked ~ label div.toggle-circle {
+        @apply translate-x-3;
       }
     </style>
+    <title>Belajar tialwind css</title>
   </head>
-  <body>
-    <h1 class="text-3xl">Mari belajar tailwind css</h1>
+  <body class="dark:bg-slate-900 dark:text-slate-300">
+    <h1 class="text-6xl text-center font-semibold my-8">
+      Mari Belajar
+      <span
+        class="bg-gradient-to-r from-blue-500 to-teal-500 bg-clip-text text-transparent"
+        >TailwindCSS</span
+      >
+    </h1>
 
-    <section>
-      <h2>spacing</h2>
-      <div class="mx-8">Margin </div>
+    <section class="mb-10 bg-indigo-300">
+      <h2 class="text-2xl">Spacing</h2>
+      <div class="m-8 p-8 text-center bg-pink-600">Margin</div>
     </section>
+
+    <section class="mb-10 m-4 bg-indigo-300">
+      <h2 class="text-2xl">Sizing</h2>
+      <div class="text-center w-32 h-32 bg-teal-600">Kotak 1</div>
+    </section>
+
+    <section class="mb-16 font-serif mx-auto max-w-lg bg-teal-300 p-3">
+      <h2 class="mb-4 text-4xl">
+        Belajar Mengenai Typography pada TailwindCSS
+      </h2>
+      <div class="mb-4 font-semibold">by Abdullah Faqih, 1 januari 2024</div>
+      <p class="mb-4">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti ut
+        necessitatibus veniam doloribus quos architecto dicta quisquam nesciunt
+        eligendi aperiam, earum, et optio, eveniet at recusandae quae. Quia
+        cupiditate nulla, ullam quas itaque nobis culpa debitis soluta atque
+        numquam natus reprehenderit nesciunt, libero molestias. Sunt, aut eius.
+        Tempora, amet nihil.
+      </p>
+      <blockquote class="mb-4 italic">
+        " Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus
+        quos, eveniet quae maiores ipsa officia odio voluptates optio sapiente
+        in."
+      </blockquote>
+      <p class="mb-4">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
+        debitis molestias tempora nihil est quis deleniti esse quo quas
+        excepturi, ratione, autem nulla nemo nisi architecto fuga neque placeat
+        odio.
+      </p>
+    </section>
+
+    <div
+      class="max-w-xl h-96 bg-slate-300 mx-auto overflow-y-scroll bg-fixed"
+      style="
+        background-image: url('https://source.unsplash.com/1000x600?nature');
+      "
+    >
+      <p class="p-5 text-xl">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium,
+        officiis provident aspernatur nesciunt ducimus eligendi incidunt quis,
+        ad et est error doloremque numquam dolores optio illo possimus fuga
+        asperiores ut sapiente molestias reiciendis debitis eius! Dicta
+        distinctio ea ad repellendus dignissimos qui? Soluta praesentium nisi
+        eum earum quasi, at natus unde deleniti a quaerat. Placeat
+        exercitationem quis quibusdam facilis iure voluptatibus ipsum dolorum,
+        doloribus officiis accusamus error quas nobis ducimus eveniet nihil
+        alias id et? Maiores labore sint voluptate aut nam? Adipisci, laborum
+        repudiandae aliquid commodi quis sit. Illo veritatis, laboriosam soluta
+        sint doloremque dolorum nemo, ratione rem aut nesciunt culpa aliquam
+        nulla quam consequuntur modi id magnam ullam excepturi dignissimos
+        corporis asperiores! Corporis repellendus ipsam dolores ducimus
+        repudiandae quam minus molestias incidunt illum, fugiat ea adipisci
+        soluta! Molestias ullam impedit soluta fugit sapiente! Nemo impedit
+        iusto eligendi placeat velit recusandae nam provident veniam error quis,
+        quos veritatis a perferendis adipisci quas fugit odio, necessitatibus
+        ipsa at consequuntur consequatur doloribus et non aliquid. In commodi
+        facilis tenetur deleniti consequuntur corporis quasi repellat laboriosam
+        vel alias quidem ex nobis mollitia, quas ducimus, necessitatibus nisi
+        at, ab natus vero? Cumque laboriosam amet facilis dolores optio officia
+        ab esse ea error, nobis nisi!
+      </p>
+    </div>
+
+    <div
+      class="mt-32 max-w-xl mx-auto h-96 bg-slate-300 bg-cover bg-no-repeat rounded-2xl border-8 shadow-xl shadow-black"
+      style="background-image: url('./img/laptop.jpg')"
+    ></div>
+
+    <hr class="my-20" />
+
+    <button
+      class="my-10 bg-teal-500 px-5 py-2 rounded-full text-white font-semibold block mx-auto hover:bg-teal-700 active:bg-teal-800 focus:ring focus:ring-teal-300 dark:bg-slate-300 dark:text-slate-800 dark:hover:bg-slate-100 dark:hover:text-slate-900"
+    >
+      Simpan
+    </button>
+
+    <hr class="my-20" />
+
+    <div class="flex justify-center">
+      <span class="text-sm text-slate-500 mr-2">Light</span>
+      <input type="checkbox" id="toggle" class="hidden" />
+      <label for="toggle">
+        <div
+          class="w-9 h-5 bg-slate-500 rounded-full flex items-center p-1 cursor-pointer"
+        >
+          <div class="w-4 h-4 bg-white rounded-full toggle-circle"></div>
+        </div>
+      </label>
+      <span class="text-sm text-slate-500 ml-2">Dark</span>
+    </div>
+
+    <div
+      class="max-w-lg my-10 border border-slate-300 rounded-xl mx-auto p-5 shadow-md hover:bg-teal-600 group font-serif dark:hover:bg-slate-300"
+    >
+      <h5
+        class="font-bold text-slate-700 text-lg mb-3 group-hover:text-white dark:group-hover:text-slate-800"
+      >
+        My Card
+      </h5>
+      <p
+        class="text-slate-600 group-hover:text-white selection:bg-red-300 selection:text-black first-line:uppercase first-line:tracking-widest first-letter:text-7xl first-letter:float-left first-letter:mr-3 dark:group-hover:text-slate-800"
+      >
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores odio
+        provident, earum quam officiis culpa ab dolor dolorum temporibus iure
+        molestiae laborum incidunt placeat doloremque repellat quos quia
+        accusantium accusamus.
+      </p>
+      <p></p>
+    </div>
+
+    <div
+      class="max-w-lg border border-slate-200 rounded-xl mx-auto shadow-md p-5"
+    >
+      <form action="">
+        <label for="email">
+          <span
+            class="block font-semibold mb-1 text-slate-700 after:content-['*'] after:text-red-500 after:ml-0.5"
+            >Email</span
+          >
+          <input
+            type="email"
+            id="email"
+            placeholder="example@mail.com"
+            class="px-3 py-2 border shadow rounded w-full block text-sm placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-teal-500 invalid:text-pink-700 invalid:focus:ring-pink-700 invalid:focus:border-pink-700 peer"
+          />
+          <p class="text-sm m-1 text-pink-700 invisible peer-invalid:visible">
+            Email tidak valid!
+          </p>
+        </label>
+      </form>
+    </div>
+
+    <div class="mb-96"></div>
+    <script>
+      const checkbox = document.querySelector("#toggle");
+      const html = document.querySelector("html");
+      const darkMode = [
+        {
+          darkMode: "dark",
+          checkBox: true,
+        },
+      ];
+
+      const dataDarkMode = JSON.parse(localStorage.getItem("darkMode"));
+
+      if (dataDarkMode) {
+        dataDarkMode.forEach((data) => {
+          checkbox.checked = data.checkBox;
+          html.classList.add("dark");
+        });
+      }
+
+      checkbox.addEventListener("click", function () {
+        if (this.checked) {
+          localStorage.setItem("darkMode", JSON.stringify(darkMode));
+          html.classList.add("dark");
+        } else {
+          localStorage.clear();
+          html.classList.remove("dark");
+        }
+      });
+    </script>
   </body>
 </html>
