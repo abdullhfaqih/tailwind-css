@@ -166,25 +166,20 @@
     <script>
       const checkbox = document.querySelector("#toggle");
       const html = document.querySelector("html");
-      const darkMode = [
-        {
-          darkMode: "dark",
-          checkBox: true,
-        },
-      ];
+      const data = {
+        darkMode: "dark",
+        checkBox: true,
+      };
 
       const dataDarkMode = JSON.parse(localStorage.getItem("darkMode"));
-
       if (dataDarkMode) {
-        dataDarkMode.forEach((data) => {
-          checkbox.checked = data.checkBox;
-          html.classList.add("dark");
-        });
+        checkbox.checked = dataDarkMode.checkBox;
+        html.classList.add(dataDarkMode.darkMode);
       }
 
       checkbox.addEventListener("click", function () {
         if (this.checked) {
-          localStorage.setItem("darkMode", JSON.stringify(darkMode));
+          localStorage.setItem("darkMode", JSON.stringify(data));
           html.classList.add("dark");
         } else {
           localStorage.clear();
